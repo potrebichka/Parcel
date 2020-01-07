@@ -13,5 +13,13 @@ namespace Parcels.Models
             Width = width;
             Weight = weight;
         }
+        public int Volume()
+        {
+            return Length * Height * Width;
+        }
+        public double CostToShip()
+        {
+            return this.Volume()*Weight*0.1 + 5;
+        }
     }
 }

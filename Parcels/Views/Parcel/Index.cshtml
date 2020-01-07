@@ -1,0 +1,15 @@
+@using Parcels.Models;
+
+@if (@Model.Length <= 0 || @Model.Height <= 0 || @Model.Width <= 0)
+{
+    <h2>Invalid dimensions</h2>
+}
+else
+{
+    <h1>Parcel</h1>
+    <h2>Dimensions: @Model.Length x @Model.Height x @Model.Width</h2>
+    <h2>Weight: @Model.Weight</h2>
+    <h2>Volume: @Model.Volume()</h2>
+    <h2>Cost: $@Model.CostToShip()</h2>
+}
+<a href='/parcel/new'>Calculate cost of another parcel</a>
